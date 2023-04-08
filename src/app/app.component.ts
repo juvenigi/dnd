@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'deckimg-tts-ui';
+
+  logSomething():void {
+    console.log("test");
+  }
 }
