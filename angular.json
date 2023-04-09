@@ -26,7 +26,12 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/bootstrap/dist/css/bootstrap.css",
+              "node_modules/bootstrap-icons/font/bootstrap-icons.css",
+              "src/css/styles.css",
+              "src/css/heading.css",
+              "src/css/body.css"
             ],
             "scripts": []
           },
@@ -88,7 +93,11 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/bootstrap-icons/font/bootstrap-icons.css",
+              "src/css/styles.css",
+              "src/css/heading.css",
+              "src/css/body.css"
             ],
             "scripts": []
           }
