@@ -14,17 +14,19 @@ export class DiceService {
     range ??= { min: 1, max: 100 };
     range.min ??= 1;
     range.max ??= 100;
-    return Math.floor(float * (range.max - range.min)) + range.min;
+    // 0..<1 => 0..<max-min+1 => min..max+1
+    return Math.floor(float * (range.max - range.min + 1)) + range.min;
   }
 
   public async rollDie(dice: Die): Promise<number | void> {
-    let float = 0.0;
-    try {
-    float = await firstValueFrom(this.entropy.getRandomFloat())
-    } catch {
-      console.error("server unavailable");
-      float = Math.random();
-    }
+    // let float = 0.0;
+    // try {
+    // float = await firstValueFrom(this.entropy.getRandomFloat())
+    // } catch {
+    //   console.error("server unavailable");
+    //   float = Math.random();
+    // }
+    const float = Math.random();
     switch (dice) {
       case Die.D4: return this.scale(float, { max: 4 });
       case Die.D6: return this.scale(float, { max: 6 });
