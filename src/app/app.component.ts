@@ -17,6 +17,7 @@ export class AppComponent {
   Number = Number;
   proficiency: number = 0;
   advantageClass = { index: 0, current: 'btn-outline-secondary', cycle: ['btn-outline-secondary', 'btn-danger', 'btn-success'] };
+  Array = Array;
 
   constructor(private d: DiceService) {
     this.model = new Model();
