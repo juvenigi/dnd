@@ -29,87 +29,55 @@
       </div>
     </div>
     <div class="col-auto">
-<!--      <div class="row">-->
-<!--        <div class="btn-toolbar gap-1">-->
-<!--          <button class="btn btn-primary"><i class="bi bi-dice-6"></i> Roll</button>-->
-<!--          <button class="btn btn-danger"><i class="bi bi-dice-6"></i> Save throw</button>-->
-<!--        </div>-->
-<!--      </div>-->
+      <!--      <div class="row">-->
+      <!--        <div class="btn-toolbar gap-1">-->
+      <!--          <button class="btn btn-primary"><i class="bi bi-dice-6"></i> Roll</button>-->
+      <!--          <button class="btn btn-danger"><i class="bi bi-dice-6"></i> Save throw</button>-->
+      <!--        </div>-->
+      <!--      </div>-->
       <div class="row my-2">
         <div class="input-group">
           <div class="input-group-text border-end">
             <input class="form-check-input" style="margin-left:-0.5rem;" type="checkbox" value="">
           </div>
           <div class="input-group-text">Mastery bonus</div>
-          <input class="form-control fs-6 text-right" type="text" value="+0" style="width: 3ch">
+          <input class="form-control fs-6 text-right" type="text" value="+0" style="width: 5ch">
         </div>
       </div>
-      <div class="row my-2" *ngFor="let b of [1,1,1,1,1]">
+      <div class="row my-2" *ngFor="let b of [1,1]">
         <div class="input-group">
           <div class="input-group-text border-end">
             <input class="form-check-input" style="margin-left:-0.5rem;" type="checkbox" value="">
           </div>
           <div class="input-group-text text-left border-start border-end">VeryLongLabel</div>
           <input class="form-control fs-6" type="text" placeholder="99" style="width: 5ch">
-<!--          <input class="form-control fs-6" type="text" placeholder="999">-->
+          <!--          <input class="form-control fs-6" type="text" placeholder="999">-->
         </div>
       </div>
     </div>
-    <div class="col-auto">
-
-    </div>
-  </div>
-  <div class="row my-2">
-    <div class="col m-2">
-      <div class="input-group">
-        <input *ngIf="this.advantageClass.index === 0" class="form-control" type="number" [(ngModel)]="model.roll">
-        <div class="input-group-text">+prof:</div>
-        <input class="form-control" type="number" [(ngModel)]="model.proficiency">
-        <button class="btn" [ngClass]="advantageClass.current" (click)="toggleAdv()">ADV</button>
-        <select class="form-select" [(ngModel)]="model.die">
-          <option *ngFor="let die of Die | keyvalue">{{die.key}}</option>
-        </select>
-        <!-- <div ngbDropdown class="d-inline-block">
-            <button class="btn btn-primary" ngbDropdownToggle>Die</button>
-            <div class="dropdown-menu" ngbDropdownMenu>
-                <button *ngFor="let die of Die | keyvalue" ngbDropdownItem>{{die.key}}</button>
+    <div class="col-7">
+      <div ngbAccordion [closeOthers]="true" [destroyOnHide]="true" class="shadow-lg">
+        <div *ngFor="let text of [1,1,1,1]; let accI = index" ngbAccordionItem="{{accI}}">
+          <div ngbAccordionHeader>
+            <button ngbAccordionButton>Something</button>
+          </div>
+          <div ngbAccordionBody>
+            <div ngbAccordionCollapse>
+              <ng-template>
+                <textarea class="form-control" style="min-height: 30vh"></textarea>
+              </ng-template>
             </div>
-        </div> -->
-        <button class="btn btn-primary" (click)="roll()">Roll</button>
-        <input class="form-control" type="number" [(ngModel)]="model.healcubes">
-        <button class="btn btn-success" (click)="heal()">Heal</button>
-      </div>
-
-      <div class="row" *ngFor="let entry of previousStates">
-      <span
-        class="fs-4">{{'Value: ' + entry.roll + " prof: " + entry.proficiency + ' array: ' + entry.rollarray}} </span>
-      </div>
-    </div>
-    <div class="col mx-2">
-      <div class="row my-2">
-        <div class="input-group" (keydown.enter)="incrementHp(true)" (keydown.shift.enter)="incrementHp(false)">
-          <div class="input-group-text">HP</div>
-          <input #healthdiff class="form-control" type="number" [(ngModel)]="model.health">
-          <div class="input-group-text">Temp. HP</div>
-          <input #healthdiff class="form-control" type="number" [(ngModel)]="model.thealth">
-          <button class="btn btn-success" (click)="incrementHp(true)"><i class="bi bi-plus-lg"></i></button>
-          <button class="btn btn-danger" (click)="incrementHp(false)"><i class="bi bi-dash-lg"></i></button>
+          </div>
         </div>
-      </div>
-      <div class="row my-2" *ngFor="let entry of this.previousStates">
-        <div class="input-group">
-          <div class="input-group-text">
-            {{'HP: ' + entry.health}}
+        <div ngbAccordionItem="add">
+          <div ngbAccordionHeader class="p-4">
+            <div class="hstack gap-3 justify-content-between">
+              <input class="form-control" type="text">
+              <button class="btn btn-primary"><span style="white-space:nowrap;"><i class="bi bi-plus-lg"></i> New</span></button>
+            </div>
           </div>
-          <div class="input-group-text">
-            {{'Temp HP: ' + entry.thealth}}
-          </div>
-          <button class="btn btn-outline-secondary" (click)="setHp(entry.health, entry.thealth)">
-            <i class="bi bi-arrow-counterclockwise"></i>
-          </button>
         </div>
       </div>
     </div>
   </div>
-  <div class="row mb-3" style="min-height: 500px"></div>
 </div>
