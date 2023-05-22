@@ -1,6 +1,11 @@
 <div class="container">
   <div class="row my-5 text-center">
     <h1>D&D 5e</h1>
+    <h2>{{isProduction}}</h2>
+    <h3>{{secret}}</h3>
+    <button class="btn btn-primary" (click)="loadTextFile()">Load File</button>
+    <button class="btn btn-primary" (click)="uploadTextFile()">upload JSON</button>
+<!--    <asl-google-signin-button type='icon' size='medium'></asl-google-signin-button>-->
   </div>
   <div class="row my-2">
     <div class="col-auto m-0 p-0">
