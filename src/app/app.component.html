@@ -1,88 +1,87 @@
-<div class="container">
-  <div class="row my-5 text-center">
-    <h1>D&D 5e</h1>
-    <h2>{{isProduction}}</h2>
-    <h3>{{secret}}</h3>
-    <button class="btn btn-primary" (click)="loadTextFile()">Load File</button>
-    <button class="btn btn-primary" (click)="uploadTextFile()">upload JSON</button>
-<!--    <asl-google-signin-button type='icon' size='medium'></asl-google-signin-button>-->
-  </div>
-  <div class="row my-2">
-    <div class="col-auto m-0 p-0">
-      <div *ngFor="let a of [1,1,1,1,1,1,1]" class="card shadow-lg vstack my-2 p-0 gap-1 text-center col-auto">
-        <div class="col-auto mt-2">
-          <h4 class="mb-1">Attribute</h4>
-        </div>
-        <div class="input-group col-auto px-4 input-group-lg">
-          <button class="btn p-1 btn-outline-secondary"><i class="bi bi-chevron-left"></i></button>
-          <input class="form-control btn-outline-secondary border-left border-right text-center fs-1"
-                 style="width: 3.5ch;" type="text" value="20">
-          <button class="btn p-1 btn-outline-secondary"><i class="bi bi-chevron-right"></i></button>
-        </div>
-        <div class="col-auto px-4 mb-3"> <!-- some black magic -->
-          <div class="btn-toolbar justify-content-between gap-0">
-            <button class="btn p-1"><i class="bi bi-magic"></i></button>
-            <div class="input-group p-0 col-auto">
-              <button class="btn p-1 btn-outline-secondary"><i class="bi bi-chevron-left"></i></button>
-              <input class="fs-6 form-control btn-outline-secondary border-left border-right" style="width: 5ch;"
-                     type="text" value="+5">
-              <button class="btn p-1 btn-outline-secondary"><i class="bi bi-chevron-right"></i></button>
-            </div>
-            <button class="btn p-1"><i class="bi bi-clock-history"></i></button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-auto">
-      <!--      <div class="row">-->
-      <!--        <div class="btn-toolbar gap-1">-->
-      <!--          <button class="btn btn-primary"><i class="bi bi-dice-6"></i> Roll</button>-->
-      <!--          <button class="btn btn-danger"><i class="bi bi-dice-6"></i> Save throw</button>-->
-      <!--        </div>-->
-      <!--      </div>-->
-      <div class="row my-2">
-        <div class="input-group">
-          <div class="input-group-text border-end">
-            <input class="form-check-input" style="margin-left:-0.5rem;" type="checkbox" value="">
-          </div>
-          <div class="input-group-text">Mastery bonus</div>
-          <input class="form-control fs-6 text-right" type="text" value="+0" style="width: 5ch">
-        </div>
-      </div>
-      <div class="row my-2" *ngFor="let b of [1,1]">
-        <div class="input-group">
-          <div class="input-group-text border-end">
-            <input class="form-check-input" style="margin-left:-0.5rem;" type="checkbox" value="">
-          </div>
-          <div class="input-group-text text-left border-start border-end">VeryLongLabel</div>
-          <input class="form-control fs-6" type="text" placeholder="99" style="width: 5ch">
-          <!--          <input class="form-control fs-6" type="text" placeholder="999">-->
-        </div>
-      </div>
-    </div>
-    <div class="col-7">
-      <div ngbAccordion [closeOthers]="true" [destroyOnHide]="true" class="shadow-lg">
-        <div *ngFor="let text of [1,1,1,1]; let accI = index" ngbAccordionItem="{{accI}}">
-          <div ngbAccordionHeader>
-            <button ngbAccordionButton>Something</button>
-          </div>
-          <div ngbAccordionBody>
-            <div ngbAccordionCollapse>
-              <ng-template>
-                <textarea class="form-control" style="min-height: 30vh"></textarea>
-              </ng-template>
-            </div>
-          </div>
-        </div>
-        <div ngbAccordionItem="add">
-          <div ngbAccordionHeader class="p-4">
-            <div class="hstack gap-3 justify-content-between">
-              <input class="form-control" type="text">
-              <button class="btn btn-primary"><span style="white-space:nowrap;"><i class="bi bi-plus-lg"></i> New</span></button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+<app-character-sheet></app-character-sheet>
+
+<!--<div class="container">-->
+<!--  <div class="row my-5 text-center">-->
+<!--    <h1>D&D 5e</h1>-->
+<!--    <button class="btn btn-primary" (click)="loadTextFile()">Load File</button>-->
+<!--    <button class="btn btn-primary" (click)="uploadTextFile()">upload JSON</button>-->
+<!--  </div>-->
+<!--  <div class="row my-2">-->
+<!--    <div class="col-auto m-0 p-0">-->
+<!--      <div *ngFor="let a of [1,1,1,1,1,1,1]" class="card shadow-lg vstack my-2 p-0 gap-1 text-center col-auto">-->
+<!--        <div class="col-auto mt-2">-->
+<!--          <h4 class="mb-1">Attribute</h4>-->
+<!--        </div>-->
+<!--        <div class="input-group col-auto px-4 input-group-lg">-->
+<!--          <button class="btn p-1 btn-outline-secondary"><i class="bi bi-chevron-left"></i></button>-->
+<!--          <input class="form-control btn-outline-secondary border-left border-right text-center fs-1"-->
+<!--                 style="width: 3.5ch;" type="text" value="20">-->
+<!--          <button class="btn p-1 btn-outline-secondary"><i class="bi bi-chevron-right"></i></button>-->
+<!--        </div>-->
+<!--        <div class="col-auto px-4 mb-3"> &lt;!&ndash; some black magic &ndash;&gt;-->
+<!--          <div class="btn-toolbar justify-content-between gap-0">-->
+<!--            <button class="btn p-1"><i class="bi bi-magic"></i></button>-->
+<!--            <div class="input-group p-0 col-auto">-->
+<!--              <button class="btn p-1 btn-outline-secondary"><i class="bi bi-chevron-left"></i></button>-->
+<!--              <input class="fs-6 form-control btn-outline-secondary border-left border-right" style="width: 5ch;"-->
+<!--                     type="text" value="+5">-->
+<!--              <button class="btn p-1 btn-outline-secondary"><i class="bi bi-chevron-right"></i></button>-->
+<!--            </div>-->
+<!--            <button class="btn p-1"><i class="bi bi-clock-history"></i></button>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="col-auto">-->
+<!--      &lt;!&ndash;      <div class="row">&ndash;&gt;-->
+<!--      &lt;!&ndash;        <div class="btn-toolbar gap-1">&ndash;&gt;-->
+<!--      &lt;!&ndash;          <button class="btn btn-primary"><i class="bi bi-dice-6"></i> Roll</button>&ndash;&gt;-->
+<!--      &lt;!&ndash;          <button class="btn btn-danger"><i class="bi bi-dice-6"></i> Save throw</button>&ndash;&gt;-->
+<!--      &lt;!&ndash;        </div>&ndash;&gt;-->
+<!--      &lt;!&ndash;      </div>&ndash;&gt;-->
+<!--      <div class="row my-2">-->
+<!--        <div class="input-group">-->
+<!--          <div class="input-group-text border-end">-->
+<!--            <input class="form-check-input" style="margin-left:-0.5rem;" type="checkbox" value="">-->
+<!--          </div>-->
+<!--          <div class="input-group-text">Mastery bonus</div>-->
+<!--          <input class="form-control fs-6 text-right" type="text" value="+0" style="width: 5ch">-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      <div class="row my-2" *ngFor="let b of [1,1]">-->
+<!--        <div class="input-group">-->
+<!--          <div class="input-group-text border-end">-->
+<!--            <input class="form-check-input" style="margin-left:-0.5rem;" type="checkbox" value="">-->
+<!--          </div>-->
+<!--          <div class="input-group-text text-left border-start border-end">VeryLongLabel</div>-->
+<!--          <input class="form-control fs-6" type="text" placeholder="99" style="width: 5ch">-->
+<!--          &lt;!&ndash;          <input class="form-control fs-6" type="text" placeholder="999">&ndash;&gt;-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="col-7">-->
+<!--      <div ngbAccordion [closeOthers]="true" [destroyOnHide]="true" class="shadow-lg">-->
+<!--        <div *ngFor="let text of [1,1,1,1]; let accI = index" ngbAccordionItem="{{accI}}">-->
+<!--          <div ngbAccordionHeader>-->
+<!--            <button ngbAccordionButton>Something</button>-->
+<!--          </div>-->
+<!--          <div ngbAccordionBody>-->
+<!--            <div ngbAccordionCollapse>-->
+<!--              <ng-template>-->
+<!--                <textarea class="form-control" style="min-height: 30vh"></textarea>-->
+<!--              </ng-template>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        <div ngbAccordionItem="add">-->
+<!--          <div ngbAccordionHeader class="p-4">-->
+<!--            <div class="hstack gap-3 justify-content-between">-->
+<!--              <input class="form-control" type="text">-->
+<!--              <button class="btn btn-primary"><span style="white-space:nowrap;"><i class="bi bi-plus-lg"></i> New</span></button>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->

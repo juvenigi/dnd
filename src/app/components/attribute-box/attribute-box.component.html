@@ -1,0 +1,23 @@
+<form [formGroup]="group" class="card shadow-lg vstack my-2 p-0 gap-1 text-center col-auto">
+  <div class="col-auto mt-2">
+    <h4 class="mb-1">{{AttributeName[attribute]}}</h4>
+  </div>
+  <div class="input-group col-auto px-4 input-group-lg">
+    <button class="btn p-1 btn-outline-secondary" (click)="addToControl(-1)"><i class="bi bi-chevron-left"></i></button>
+    <input formControlName="value" class="form-control btn-outline-secondary border-left border-right text-center fs-1"
+           style="width: 3.5ch;" type="text" placeholder="--">
+    <button class="btn p-1 btn-outline-secondary" (click)="addToControl(1)"><i class="bi bi-chevron-right"></i></button>
+  </div>
+  <div class="col-auto px-4 mb-3"> <!-- some black magic -->
+    <div class="btn-toolbar justify-content-between gap-0">
+      <button class="btn p-1"><i class="bi bi-magic"></i></button>
+      <div class="input-group p-0 col-auto">
+        <button class="btn p-1 btn-outline-secondary" (click)="addToControl(-2)"><i class="bi bi-chevron-left"></i></button>
+        <input formControlName="modValue" class="fs-6 form-control btn-outline-secondary border-left border-right" style="width: 5ch;"
+               type="text" placeholder="-">
+        <button class="btn p-1 btn-outline-secondary" (click)="addToControl(+2)"><i class="bi bi-chevron-right"></i></button>
+      </div>
+      <button class="btn p-1"><i class="bi bi-clock-history"></i></button>
+    </div>
+  </div>
+</form>

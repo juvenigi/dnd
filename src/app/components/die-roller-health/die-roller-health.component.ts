@@ -1,8 +1,8 @@
 import {Component} from '@angular/core';
-import {Die} from "../model/enum/die.enum";
+import {Die} from "../../model/enum/die.enum";
 import {forkJoin, lastValueFrom} from "rxjs";
-import {Model} from "../app.component";
-import {DiceService} from "../service/dice.service";
+import {Model} from "../../app.component";
+import {DiceService} from "../../service/dice.service";
 
 @Component({
   selector: 'app-die-roller-health',

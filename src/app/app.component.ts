@@ -14,10 +14,6 @@ import {HttpClient, HttpHeaders} from "@angular/common/http";
 
 export class AppComponent {
 
-  isProduction = Environment.production;
-  secret = Environment.gapi.clientSecret;
-  clientId = Environment.gapi.clientId;
-
   authService = inject(SocialAuthService);
   http = inject(HttpClient);
   accessToken: string | undefined;

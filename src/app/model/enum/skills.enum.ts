@@ -1,0 +1,21 @@
+export enum Skills {
+  acrobatDex="acrobatDex",
+  animalWis="animalWis",
+  arcanaInt="arcanaInt",
+  athletStr="athletStr",
+  deceptCha="deceptCha",
+  histInt="histInt",
+  insightWis="insightWis",
+  intimidCha="intimidCha",
+  investiInt="investiInt",
+  medicineWis="medicineWis",
+  natureInt="natureInt",
+  percWis="percWis",
+  perfCha="perfCha",
+  persuCha="persuCha",
+  religionInt="religionInt",
+  handDex="handDex",
+  stealthDex="stealthDex",
+  survivalWis="survivalWis",
+  passiveWis="passiveWis"
+}

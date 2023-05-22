@@ -5,12 +5,12 @@ import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {SandboxComponent} from './components/sandbox/sandbox.component';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {DndHistoryListComponent} from './components/dnd-history-list/dnd-history-list.component';
 import {CharSheetStatsComponent} from './components/char-sheet-stats/char-sheet-stats.component';
 import {ActionContainerComponent} from './components/action-container/action-container.component';
 import {ActionEntryComponent} from './components/action-entry/action-entry.component';
-import {DieRollerHealthComponent} from './die-roller-health/die-roller-health.component';
+import {DieRollerHealthComponent} from './components/die-roller-health/die-roller-health.component';
 import {
   GoogleInitOptions,
   GoogleLoginProvider,
@@ -18,6 +18,10 @@ import {
   SocialLoginModule
 } from "@abacritt/angularx-social-login";
 import {Environment} from "../environments/environment";
+import { CharacterSheetComponent } from './components/character-sheet/character-sheet.component';
+import { AttributeBoxComponent } from './components/attribute-box/attribute-box.component';
+import { SkillCheckboxComponent } from './components/skill-checkbox/skill-checkbox.component';
+import { TextAccordionComponent } from './components/text-accordion/text-accordion.component';
 
 export const googleLoginOptions: GoogleInitOptions = {
   oneTapEnabled: true, // default is true
@@ -35,7 +39,11 @@ export const googleLoginOptions: GoogleInitOptions = {
     CharSheetStatsComponent,
     ActionContainerComponent,
     ActionEntryComponent,
-    DieRollerHealthComponent
+    DieRollerHealthComponent,
+    CharacterSheetComponent,
+    AttributeBoxComponent,
+    SkillCheckboxComponent,
+    TextAccordionComponent
   ],
   imports: [
     BrowserModule,
@@ -44,6 +52,7 @@ export const googleLoginOptions: GoogleInitOptions = {
     HttpClientModule,
     FormsModule,
     SocialLoginModule,
+    ReactiveFormsModule,
   ],
   providers: [
     {
@@ -59,9 +68,7 @@ export const googleLoginOptions: GoogleInitOptions = {
             )
           }
         ],
-        onError: (err) => {
-          console.error(err);
-        }
+        onError: console.error
       } as SocialAuthServiceConfig,
     }
   ],
