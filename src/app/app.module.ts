@@ -22,6 +22,7 @@ import { CharacterSheetComponent } from './components/character-sheet/character-
 import { AttributeBoxComponent } from './components/attribute-box/attribute-box.component';
 import { SkillCheckboxComponent } from './components/skill-checkbox/skill-checkbox.component';
 import { TextAccordionComponent } from './components/text-accordion/text-accordion.component';
+import { CharacterHeaderComponent } from './components/character-header/character-header.component';
 
 export const googleLoginOptions: GoogleInitOptions = {
   oneTapEnabled: true, // default is true
@@ -43,7 +44,8 @@ export const googleLoginOptions: GoogleInitOptions = {
     CharacterSheetComponent,
     AttributeBoxComponent,
     SkillCheckboxComponent,
-    TextAccordionComponent
+    TextAccordionComponent,
+    CharacterHeaderComponent
   ],
   imports: [
     BrowserModule,
