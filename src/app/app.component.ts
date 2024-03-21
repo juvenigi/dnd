@@ -1,10 +1,8 @@
-import {Component, ElementRef, inject, ViewChild} from '@angular/core';
+import {Component, inject} from '@angular/core';
 import {Die} from './model/enum/die.enum';
-import {DiceService} from './service/dice.service';
-import {forkJoin, lastValueFrom, reduce} from 'rxjs';
-import {Environment} from "../environments/environment";
 import {GoogleLoginProvider, SocialAuthService} from "@abacritt/angularx-social-login";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
+import {Attributes} from "./model/enum/attributes.enum";
 
 @Component({
   selector: 'app-root',
@@ -64,6 +62,11 @@ export class AppComponent {
       }
     }).subscribe(console.debug);
   }
+
+  // test():void {
+    // let test: Map<Attributes,number[]> = new Map<Set<string>,number[]>();
+    // test.set(Attributes.STR, [10,0]);
+  // }
 
   async loadTextFile() {
     const accessToken = await this.getAccessToken();

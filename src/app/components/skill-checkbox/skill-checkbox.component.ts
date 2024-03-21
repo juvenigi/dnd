@@ -9,7 +9,7 @@ import {Skills} from "../../model/enum/skills.enum";
 })
 export class SkillCheckboxComponent {
 
-  @Input() name = Skills.investiInt;
+  @Input() name = Skills.Investigation;
   value = new FormControl<number>(0, {nonNullable:true});
   mastered = new FormControl<boolean>(false, {nonNullable:true})
 
